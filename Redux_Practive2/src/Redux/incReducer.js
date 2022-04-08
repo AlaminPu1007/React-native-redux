@@ -23,20 +23,17 @@ const IncReducer = (state = initialState, action) => {
       };
 
     case 'PUSH_DATA_POST':
-
-    if(__DEV__){
-      console.log(action.payload, action.type);
-    }
-      
-        return {
-          ...state,
-          post: [
-            {
-              title: 1,
-              name: 'jon'
-            }
-          ],
-        };
+      return {
+        ...state,
+        post: [
+          ...state.post,
+          {
+            id: action.payload,
+            title: Math.floor(Math.random() * 9999),
+            name: `John ${action.payload}`,
+          },
+        ],
+      };
 
     default:
       return state;

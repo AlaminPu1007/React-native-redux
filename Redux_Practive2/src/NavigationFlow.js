@@ -10,10 +10,16 @@ function MyTabs() {
   return (
     <Tab.Navigator>
       <Tab.Screen
+        options={{
+          lazy: true,
+        }}
         name="Home"
         component={HomeScreen}
       />
       <Tab.Screen
+        options={{
+          lazy: true,
+        }}
         name="Settings"
         component={SettingScreen}
       />
