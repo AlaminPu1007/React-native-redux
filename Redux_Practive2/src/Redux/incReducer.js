@@ -2,7 +2,6 @@
 const initialState = {
   count: 0,
   token: null,
-  post: [],
 };
 
 const IncReducer = (state = initialState, action) => {
@@ -20,19 +19,6 @@ const IncReducer = (state = initialState, action) => {
       return {
         ...state,
         count: state.count - action.payload,
-      };
-
-    case 'PUSH_DATA_POST':
-      return {
-        ...state,
-        post: [
-          ...state.post,
-          {
-            id: action.payload,
-            title: Math.floor(Math.random() * 9999),
-            name: `John ${action.payload}`,
-          },
-        ],
       };
 
     default:

@@ -8,7 +8,7 @@ const selectNumCompletedTodos = state => state.IncReducer;
 
 const HomeScreen = () => {
   // bring our incReducer all state
-  const {count, post} = useSelector(selectNumCompletedTodos, shallowEqual);
+  const {count} = useSelector(selectNumCompletedTodos, shallowEqual);
 
   const incMethod = () => {
     IncAction(1);
